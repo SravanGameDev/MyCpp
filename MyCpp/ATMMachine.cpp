@@ -12,7 +12,7 @@ void ShowMenu()
 
 
 }
-void main()
+void Logic()
 {
 	int option;
 	float balance=500;
@@ -57,4 +57,9 @@ void main()
 
 	cout << endl;
 	system("pause>0");
+}
+
+void main()
+{
+	Logic();
 }
