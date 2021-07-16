@@ -1,6 +1,8 @@
 #include<iostream>
 using namespace std;
 
+#pragma region Return type functions
+
 /// <summary>
 /// return type function
 /// </summary>
@@ -32,8 +34,9 @@ void PrimeNumber()
 			std::cout << i << " is a prime number\n";
 		
 	}
-
 }
+
+#pragma endregion
 
 #pragma region  Function Overloading
 
@@ -59,9 +62,64 @@ float Area(float radius)
 }
 #pragma endregion
 
+#pragma region Generic fuctions and templates
+
+template<typename T>
+void Swap(T& a, T& b)
+{
+	T temp = a;
+	a = b;
+	b = temp;
+}
+
+void ImplementSwap()
+{
+	int a = 1, b = 2;
+	//can not pass the value directly into the template
+	Swap<int>(a, b);
+	cout << a << b;
+}
+
+#pragma endregion
+
+#pragma region Recursion and recurvise
+//Question Sum numbers between m and 
+//Without using recursive function
+void SumNumbers(int m, int n)
+{
+	int sum = 0;
+	if (m > n)
+		Swap(m, n);
+
+	for (size_t i = m; i <= n; i++)
+		sum += i;
+
+	cout << "Sum= " << sum << endl;
+
+}
+
+//Using recursive function
+int recursiveSum(int m, int n)
+{
+	if (m > n)
+		Swap(m, n);
+	if (m == n)
+		return m;
+	return m+recursiveSum(m+1,n);
+}
+
+void logicRecursive(int m, int n)
+{
+	cout << "Sum= " << recursiveSum(m, n)<<endl;
+}
+
+#pragma endregion
+
 void main()
 {
-	PrimeNumber();
+	SumNumbers(2, 4);
+	logicRecursive(2, 4);
 
-	system("pause>0");
+	cin.get();
+	
 }

@@ -58,8 +58,3 @@ void Logic()
 	cout << endl;
 	system("pause>0");
 }
-
-void main()
-{
-	Logic();
-}
