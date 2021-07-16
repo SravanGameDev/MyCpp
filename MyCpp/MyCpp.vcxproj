@@ -140,11 +140,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ATMMachine.cpp" />
-    <ClCompile Include="D:\Backup\Scripts\BasicSyntax.cpp" />
-    <ClCompile Include="D:\Backup\Scripts\Calculators.cpp" />
-    <ClCompile Include="D:\Backup\Scripts\Function.cpp" />
-    <ClCompile Include="D:\Backup\Scripts\Loops.cpp" />
-    <ClCompile Include="D:\Backup\Scripts\Operators.cpp" />
+    <ClCompile Include="BasicSyntax.cpp" />
+    <ClCompile Include="Calculators.cpp" />
+    <ClCompile Include="Function.cpp" />
+    <ClCompile Include="Loops.cpp" />
+    <ClCompile Include="Operators.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

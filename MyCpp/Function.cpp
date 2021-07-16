@@ -32,7 +32,7 @@ void PrimeNumber()
 		bool isPrimeFlag = IsPrimeNumber(i);
 		if (isPrimeFlag)
 			std::cout << i << " is a prime number\n";
-		
+
 	}
 }
 
@@ -99,27 +99,33 @@ void SumNumbers(int m, int n)
 }
 
 //Using recursive function
-int recursiveSum(int m, int n)
+int LogicRecursiveSum(int m, int n)
 {
 	if (m > n)
 		Swap(m, n);
 	if (m == n)
 		return m;
-	return m+recursiveSum(m+1,n);
+	return m + LogicRecursiveSum(m + 1, n);
 }
 
-void logicRecursive(int m, int n)
+int LogicRecursiveFactorial(int n)
 {
-	cout << "Sum= " << recursiveSum(m, n)<<endl;
+	if (n == 1)
+		return n;
+
+	return n * LogicRecursiveFactorial(n - 1);
 }
 
 #pragma endregion
 
 void main()
 {
-	SumNumbers(2, 4);
-	logicRecursive(2, 4);
+	int number;
+	cout << "Enter a number: ";
+	cin >> number;
+	cout << "Factorial= " << LogicRecursiveFactorial(number) << endl;
+	cout << "Sum= " << LogicRecursiveSum(number, 5) << endl;
 
 	cin.get();
-	
+
 }
