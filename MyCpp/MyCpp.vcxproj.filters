@@ -33,5 +33,8 @@
     <ClCompile Include="Operators.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Oops.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

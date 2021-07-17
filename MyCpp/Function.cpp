@@ -27,7 +27,7 @@ void PrimeNumber()
 	std::cout << "Number: ";
 	std::cin >> number;
 
-	for (size_t i = 1; i < number; i++)
+	for (int i = 1; i < number; i++)
 	{
 		bool isPrimeFlag = IsPrimeNumber(i);
 		if (isPrimeFlag)
@@ -51,9 +51,9 @@ float Area(float base, float height)
 	return value;
 }
 
-float Area(float radius)
+double Area(float radius)
 {
-	float value;
+	double value;
 
 	value = 3.14 * radius * radius;
 	cout << "Area of a cricle is : " << value << endl;
@@ -91,7 +91,7 @@ void SumNumbers(int m, int n)
 	if (m > n)
 		Swap(m, n);
 
-	for (size_t i = m; i <= n; i++)
+	for (int i = m; i <= n; i++)
 		sum += i;
 
 	cout << "Sum= " << sum << endl;
@@ -118,7 +118,7 @@ int LogicRecursiveFactorial(int n)
 
 #pragma endregion
 
-void main()
+void MainMethod()
 {
 	int number;
 	cout << "Enter a number: ";
@@ -127,5 +127,4 @@ void main()
 	cout << "Sum= " << LogicRecursiveSum(number, 5) << endl;
 
 	cin.get();
-
 }

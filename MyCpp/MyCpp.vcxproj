@@ -144,6 +144,7 @@
     <ClCompile Include="Calculators.cpp" />
     <ClCompile Include="Function.cpp" />
     <ClCompile Include="Loops.cpp" />
+    <ClCompile Include="Oops.cpp" />
     <ClCompile Include="Operators.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
