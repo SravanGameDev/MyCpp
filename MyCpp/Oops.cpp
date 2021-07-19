@@ -47,19 +47,20 @@ void GameGenreData()
 
 #pragma endregion
 
-
 #pragma region Encapsulation
 
-class PlayerData
+class Data
 {
 private:
-	string Name;
 	int Kills;
 	int Deaths;
 	list<string> rewards;
 	
+protected:
+	string Name;
+
 public:
-	PlayerData(string name, int kill, int death)
+	Data(string name, int kill, int death)
 	{
 		Name = name;
 		Kills = kill;
@@ -76,7 +77,6 @@ public:
 		{
 			cout << playerRewards<<endl;
 		}
-		cout << endl;
 	}
 
 	void AddRewards(string name)
@@ -86,16 +86,53 @@ public:
 
 };
 
+void OutputEncapsulation()
+{
+	cout << "Encapsulation Output"<<endl;
+	Data player1("Bean", 10, 2);
+	player1.AddRewards("Brave Solider");
+	player1.AddRewards("Unbeatable");
+
+	player1.GetInfo();
+}
+
+#pragma endregion
+
+#pragma region Inheritance
+
+class PlayerData: public Data
+{
+public:
+	PlayerData(string name, int kill, int death): Data(name,kill,death)
+	{
+
+	}
+
+	void InGameStatus()
+	{
+		cout <<Name<<" Game Status: Player is Moving"<<endl;
+	}
+
+	
+};
+
+void OutputInheritance()
+{
+	cout << "Inheritance Output" << endl;
+
+	PlayerData playerData("Bean", 12, 3);
+	playerData.AddRewards("Brave Solider");
+	playerData.AddRewards("Unbeatable");
+	playerData.InGameStatus();
+	playerData.GetInfo();
+}
+
 #pragma endregion
 
 
 int main()
 {
-	PlayerData player1("Bean", 10, 2);
-	player1.AddRewards("Brave Solider");
-	player1.AddRewards("Unbeatable");
-	
-	player1.GetInfo();
+	OutputInheritance();
 
 	cin.get();
 }
