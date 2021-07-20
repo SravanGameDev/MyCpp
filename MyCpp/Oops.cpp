@@ -30,7 +30,7 @@ public:
 };
 
 
-void GameGenreData()
+void OutputConstructor()
 {
 	GameGenre action("Read Dead Redemption", "Rockstar North");
 	action.GameSoldCopies.push_back("Hundered");
@@ -58,6 +58,7 @@ private:
 	
 protected:
 	string Name;
+	float position;
 
 public:
 	Data(string name, int kill, int death)
@@ -73,9 +74,14 @@ public:
 		cout << "Kills: " << Kills<<endl;
 		cout << "Deaths: " << Deaths<<endl;
 		cout << "Achivements:" << endl;
+		if(rewards.size())
 		for (string playerRewards : rewards)
 		{
 			cout << playerRewards<<endl;
+		}
+		else
+		{
+			cout << "No achievements" << endl;
 		}
 	}
 
@@ -84,6 +90,13 @@ public:
 		rewards.push_back(name);
 	}
 
+	void Currentposition()
+	{
+		if (position > 3)
+			cout << Name << " is moving fast";
+		else
+			cout << Name << " is too slow";
+	}
 };
 
 void OutputEncapsulation()
@@ -103,17 +116,13 @@ void OutputEncapsulation()
 class PlayerData: public Data
 {
 public:
-	PlayerData(string name, int kill, int death): Data(name,kill,death)
-	{
-
-	}
+	PlayerData(string name, int kill, int death): Data(name,kill,death){}
 
 	void InGameStatus()
 	{
 		cout <<Name<<" Game Status: Player is Moving"<<endl;
+		position++;
 	}
-
-	
 };
 
 void OutputInheritance()
@@ -129,10 +138,51 @@ void OutputInheritance()
 
 #pragma endregion
 
+#pragma region Polymorphism
+
+class EnemyData : public Data
+{
+public:
+	EnemyData(string name, int kill, int death) : Data(name, kill, death){}
+
+	void InGameStatus()
+	{
+		cout << Name << " Game Status: Enemy is Moving" << endl;
+		position++;
+	}
+};
+
+void OutputPolymorphism()
+{
+	cout << "\nPolymorphism Output" << endl;
+	PlayerData playerData("Bean", 12, 3);
+	playerData.InGameStatus();
+	playerData.InGameStatus();
+	playerData.InGameStatus();
+	playerData.InGameStatus();
+	playerData.InGameStatus();
+	playerData.AddRewards("Brave Solider");
+	playerData.AddRewards("Unbeatable");
+	playerData.GetInfo();
+
+	Data* pdata = &playerData;
+	playerData.Currentposition();
+
+	cout << "\n--------------------------" << endl;
+
+	EnemyData enemyData("Kali", 8, 1);
+	enemyData.InGameStatus();
+	enemyData.GetInfo();
+	
+	Data* edata = &enemyData;
+	enemyData.Currentposition();
+
+}
+
+#pragma endregion
 
 int main()
 {
-	OutputInheritance();
-
+	OutputPolymorphism();
 	cin.get();
 }
