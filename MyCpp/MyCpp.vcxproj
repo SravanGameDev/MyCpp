@@ -146,6 +146,7 @@
     <ClCompile Include="Loops.cpp" />
     <ClCompile Include="Oops.cpp" />
     <ClCompile Include="Operators.cpp" />
+    <ClCompile Include="Pointers.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

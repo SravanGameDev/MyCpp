@@ -116,9 +116,7 @@ int LogicRecursiveFactorial(int n)
 	return n * LogicRecursiveFactorial(n - 1);
 }
 
-#pragma endregion
-
-void MainMethod()
+void OutputRecursive()
 {
 	int number;
 	cout << "Enter a number: ";
@@ -128,3 +126,6 @@ void MainMethod()
 
 	cin.get();
 }
+
+#pragma endregion
+

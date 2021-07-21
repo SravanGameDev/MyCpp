@@ -48,7 +48,7 @@ void OutputConstructor()
 #pragma endregion
 
 #pragma region Encapsulation
-
+//Base class
 class Data
 {
 private:
@@ -180,9 +180,3 @@ void OutputPolymorphism()
 }
 
 #pragma endregion
-
-int main()
-{
-	OutputPolymorphism();
-	cin.get();
-}
