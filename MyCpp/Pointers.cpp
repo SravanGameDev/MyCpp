@@ -26,15 +26,46 @@ void PointerBasics()
 	//Pointers can access the base class data
 }
 
-#pragma endregion
-
-int main()
+void OuputPointerBasics()
 {
 	int n = 3;
 	int* ptr2=&n;
 
 	*ptr2 = 7;
-	cout <<"n: " << n << endl;
+	cout <<"N: " << n << endl;
+}
+
+#pragma endregion
+
+#pragma region Void Pointer
+
+void printNumber(int* numberPtr)
+{
+	cout<<*numberPtr<<endl;
+}
+
+void printNumber(char* charPtr)
+{
+	cout<<*charPtr<<endl;
+}
+
+void print(void* ptr,char type)
+{
+	switch (type)
+	{
+	case 'i': cout<<*((int*) ptr)<<endl;break;
+	case 'c': cout<<*((char*) ptr)<<endl;break;
+
+	}
+}
+
+#pragma endregion
+int main()
+{
+	int number=5;
+	char letter='a';
+	print(&number,'i');
+	print(&letter,'c');
 
 	cin.get();
 }
