@@ -59,13 +59,39 @@ void print(void* ptr,char type)
 	}
 }
 
-#pragma endregion
-int main()
+void OutputVoidPointer()
 {
 	int number=5;
 	char letter='a';
 	print(&number,'i');
 	print(&letter,'c');
+
+}
+#pragma endregion
+
+#pragma region Pointer and arrays
+
+//cout<<luckyNumbers<<endl; address of an array
+//cout<<&luckyNumbers[0]<<endl; address of an array similar to previous line
+//cout<<luckyNumbers[2]<<endl; add to address to second location
+//cout<<*(luckyNUmbers+2)<<endl; deference the array to get the data
+
+#pragma endregion
+
+int main()
+{
+	int luckyNumbers[5];
+	for (size_t i = 0; i <5;i++)
+	{
+		cout<<"Number: ";
+		cin>>luckyNumbers[i];
+	}
+	
+	for (size_t i = 0; i < 5; i++)
+	{
+		cout<<*(luckyNumbers+2)<<endl; 
+	}
+	
 
 	cin.get();
 }
