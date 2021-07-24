@@ -71,27 +71,42 @@ void OutputVoidPointer()
 
 #pragma region Pointer and arrays
 
-//cout<<luckyNumbers<<endl; address of an array
-//cout<<&luckyNumbers[0]<<endl; address of an array similar to previous line
-//cout<<luckyNumbers[2]<<endl; add to address to second location
-//cout<<*(luckyNUmbers+2)<<endl; deference the array to get the data
+// Notes:
+// Address of an array
+// cout<<luckyNumbers<<endl; 
+// Address of an array first element, similar to previous line
+// cout<<&luckyNumbers[0]<<endl; 
+// Return the stored value to third location in the array
+// cout<<luckyNumbers[2]<<endl; 
+// Deference the array to get the data and address is added to the first element 
+// cout<<*(luckyNumbers+2)<<endl; 
+
+
+void OutputArraysWithPointers()
+{
+	int luckyNumbers[5];
+
+	for (size_t i = 0; i < 5; i++)
+	{
+		cout << "Number: ";
+		cin >> luckyNumbers[i];
+	}
+
+	for (size_t i = 0; i < 5; i++)
+	{
+		cout << *(luckyNumbers + i) << endl;
+	}
+}
 
 #pragma endregion
 
+#pragma region Return Multiple Values from a function
+
+#pragma endregion
+
+
 int main()
 {
-	int luckyNumbers[5];
-	for (size_t i = 0; i <5;i++)
-	{
-		cout<<"Number: ";
-		cin>>luckyNumbers[i];
-	}
 	
-	for (size_t i = 0; i < 5; i++)
-	{
-		cout<<*(luckyNumbers+2)<<endl; 
-	}
-	
-
 	cin.get();
 }
