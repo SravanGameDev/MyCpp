@@ -155,9 +155,37 @@ void OutputMultipleValues()
 }
 #pragma endregion
 
+#pragma region Dynamic arrays at runtime
+
+void OutputDyanmisArray()
+{
+	int size;
+	cout << "Size: ";
+	cin >> size;
+	//int myArray[size];
+	int* myArray = new int[size];
+
+	for (size_t i = 0; i < size; i++)
+	{
+		cout << "Array [" << i << "] ";
+		cin >> myArray[i];
+	}
+
+	for (size_t i = 0; i < size; i++)
+	{
+		//cout << myArray[i] << " ";
+		cout << *(myArray + i) << " ";
+	}
+
+	delete[] myArray;
+	myArray = NULL;
+}
+
+#pragma endregion
+
 int main()
 {
-	OutputMultipleValues();
+	OutputDyanmisArray();
 
 	cin.get();
 }
