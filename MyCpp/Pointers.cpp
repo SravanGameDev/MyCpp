@@ -182,10 +182,3 @@ void OutputDyanmisArray()
 }
 
 #pragma endregion
-
-int main()
-{
-	OutputDyanmisArray();
-
-	cin.get();
-}
