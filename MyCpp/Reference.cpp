@@ -8,7 +8,7 @@ void Increment(int* value)
 	(*value)++;
 }
 
-void main()
+void OutputReference()
 {
 	int a = 2;
 

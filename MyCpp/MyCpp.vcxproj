@@ -148,6 +148,7 @@
     <ClCompile Include="Operators.cpp" />
     <ClCompile Include="Pointers.cpp" />
     <ClCompile Include="Reference.cpp" />
+    <ClCompile Include="Structs.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
