@@ -8,7 +8,15 @@ using namespace std;
 // Data in Game use Struct
 // Functionality in Game use Class
 
-void main()
+struct Data
 {
+	int age;
+private:
+	string name;
+};
 
+void OutputStruct()
+{
+	Data data;
+	data.age;
 }
