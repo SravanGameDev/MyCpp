@@ -36,7 +36,7 @@ public:
 //smart pointers
 //Stack examples: timer
 
-void main()
+void OutputStackAndHeap()
 {
 	{
 		ScopePtr ptr = new Entity();

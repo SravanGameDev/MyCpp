@@ -45,10 +45,13 @@
     <ClCompile Include="Structs.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ClassLog.cpp">
+    <ClCompile Include="Objectlifetime.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Objectlifetime.cpp">
+    <ClCompile Include="StaticInstances.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
