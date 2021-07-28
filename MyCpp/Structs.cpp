@@ -10,7 +10,7 @@ using namespace std;
 
 struct Data
 {
-	int age;
+	int age=25;
 private:
 	string name;
 };
