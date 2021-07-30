@@ -142,6 +142,8 @@
     <ClCompile Include="ATMMachine.cpp" />
     <ClCompile Include="BasicSyntax.cpp" />
     <ClCompile Include="Calculators.cpp" />
+    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="Enums.cpp" />
     <ClCompile Include="Function.cpp" />
     <ClCompile Include="Loops.cpp" />
     <ClCompile Include="Objectlifetime.cpp" />
@@ -152,6 +154,9 @@
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="StaticInstances.cpp" />
     <ClCompile Include="Structs.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Entity.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

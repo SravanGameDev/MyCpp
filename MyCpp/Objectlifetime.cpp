@@ -1,14 +1,14 @@
 #include<iostream>
 using namespace std;
 
-class Entity
+class ExEntity
 {
 public:
-	Entity()
+	ExEntity()
 	{
 		cout << "Created Entity"<<endl;
 	}
-	~Entity()
+	~ExEntity()
 	{
 		cout << "Destroyed Entity" << endl;
 	}
@@ -19,9 +19,9 @@ class ScopePtr
 {
 public:
 	
-	Entity* m_ptr;
+	ExEntity* m_ptr;
 
-	ScopePtr(Entity* ptr)
+	ScopePtr(ExEntity* ptr)
 	{
 		this->m_ptr = ptr;
 	}
@@ -39,6 +39,6 @@ public:
 void OutputStackAndHeap()
 {
 	{
-		ScopePtr ptr = new Entity();
+		ScopePtr ptr = new ExEntity();
 	}
 }

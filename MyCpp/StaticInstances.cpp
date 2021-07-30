@@ -12,7 +12,7 @@
 #pragma region Static
 
 // I used struct because the members function and variable are default public
-struct Entity
+struct ExEntity
 {
 	static int x, y;
 
@@ -23,20 +23,20 @@ struct Entity
 	}
 };
 
-int Entity::x;
-int Entity::y;
+int ExEntity::x;
+int ExEntity::y;
 
 void  OutputStatic()
 {
-	Entity e;
+	ExEntity e;
 	e.x = 2;
 	e.y = 5;
 
-	Entity::x = 8;
-	Entity::y = 10;
+	ExEntity::x = 8;
+	ExEntity::y = 10;
 
 	e.Print();
-	Entity::Print();
+	ExEntity::Print();
 }
 
 #pragma endregion
@@ -74,10 +74,3 @@ void OutputLocalStatic()
 }
 
 #pragma endregion
-
-int main()
-{
-	OutputLocalStatic();
-
-	std::cin.get();
-}
