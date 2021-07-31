@@ -5,7 +5,7 @@ using namespace std;
 class Entity
 {
 public: 
-	string GetName() { return "Entity"; }
+	virtual string GetName() { return "Entity"; }
 
 };
 
@@ -20,16 +20,23 @@ public:
 
 	}
 
-	string GetName() { return m_Name; }
+	string GetName() override { return m_Name; }
 };
+
+void PrintName(Entity* e)
+{
+	cout<<e->GetName()<<endl;
+}
 
 int main()
 {
-	Entity e;
-	cout<<e.GetName()<<endl;
+	Entity* e=new Entity();
+	//cout<<e.GetName()<<endl;
+	PrintName(e);
 
-	Player p("Bandit");
-	cout<<p.GetName();
+	Player* p= new Player("Player");
+	//cout<<p.GetName();
+	PrintName(p);
 
 	std::cin.get();
 }
