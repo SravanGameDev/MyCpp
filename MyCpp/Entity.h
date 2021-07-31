@@ -2,11 +2,18 @@
 #include<iostream>
 using namespace std;
 
-class Entity
+class Printable
+{
+public:
+	virtual string GetClassName()=0;
+};
+
+class Entity: public Printable
 {
 public: 
 	virtual string GetName() { return "Entity"; }
 
+	string GetClassName() override {return "Entity";}	
 };
 
 class Player : public Entity
@@ -21,6 +28,8 @@ public:
 	}
 
 	string GetName() override { return m_Name; }
+
+	string GetClassName() override {return "Players";}
 };
 
 void PrintName(Entity* e)
@@ -28,15 +37,22 @@ void PrintName(Entity* e)
 	cout<<e->GetName()<<endl;
 }
 
+void Print(Printable* obj)
+{
+	cout << obj->GetClassName() << endl;
+}
+
 int main()
 {
 	Entity* e=new Entity();
 	//cout<<e.GetName()<<endl;
-	PrintName(e);
+	//PrintName(e);
+	Print(e);
 
 	Player* p= new Player("Player");
 	//cout<<p.GetName();
-	PrintName(p);
+	//PrintName(p);
+	Print(p);
 
 	std::cin.get();
 }
