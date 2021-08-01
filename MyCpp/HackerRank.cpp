@@ -1,30 +1,34 @@
-#include<iostream>
+#include <iostream>
 #include<vector>
 using namespace std;
 
-int main()
+void MinMax()
 {
-	vector<int> arr { 1,2,3,4,5 }; 
-	int max = 0;
-	int min = 0;
-
-
-
-	for (int i = 1; i <= arr.size(); i++)
+	vector<int> arr { 1,2,3,4,5}; 
+	_int64 max = 0;
+	_int64 min = 0;
+	
+	for (int i = 0; i < arr.size(); i++)
 	{
-		int value = 0;
-		for (int j = 0; j < 4; j++)
+		_int64 value = 0;
+		for (int j = 0; j < arr.size(); j++)
 		{
+			if (j==i) continue;
 			cout << arr[j] << " ";
 			value += arr[j];
 		}
 
-
 		cout<<" " << value << endl;
-		if (value > max) max = value;
-		if (value < min) min = value;
+		if (value > max || max == 0) max = value;
+		if (value < min || min == 0) min = value;
 	}
 
+	cout << "Min" << " " << "Max"<<endl;
+	cout << min<<"  " << max;
+}
+
+int main()
+{
+	MinMax();
 	cin.get();
 }
-//std::iter_swap(arr.begin(), arr.end() - 1);
