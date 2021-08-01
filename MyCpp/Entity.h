@@ -2,15 +2,18 @@
 #include<iostream>
 using namespace std;
 
+/* Base Class */
 class Printable
 {
 public:
 	virtual string GetClassName()=0;
 };
 
+/* Derived Class */
 class Entity: public Printable
 {
 public: 
+	Entity(){}
 	virtual string GetName() { return "Entity"; }
 
 	string GetClassName() override {return "Entity";}	
@@ -42,7 +45,7 @@ void Print(Printable* obj)
 	cout << obj->GetClassName() << endl;
 }
 
-int main()
+void Output()
 {
 	Entity* e=new Entity();
 	//cout<<e.GetName()<<endl;
@@ -53,6 +56,4 @@ int main()
 	//cout<<p.GetName();
 	//PrintName(p);
 	Print(p);
-
-	std::cin.get();
 }
