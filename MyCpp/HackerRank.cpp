@@ -27,8 +27,29 @@ void MinMax()
 	cout << min<<"  " << max;
 }
 
+
 int main()
 {
-	MinMax();
+	string s = { "07:05:45PM" };
+
+	string time;
+
+	char am = 'A', pm = 'P';
+	bool formatchange = false;
+	string hours = { "12" };
+
+	for (char i = 0; i < s.size(); i++)
+	{
+		if (s[i] == am || s[i] == pm)
+		{
+			//cout << s[i];
+			formatchange = true;
+		}
+	}
+
+	if (formatchange)
+	{
+		cout << "24 hours format";
+	}
 	cin.get();
 }
